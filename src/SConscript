@@ -1,0 +1,6 @@
+Import('env')
+
+objects = [env.Object(f) for f in Glob("*cpp")]
+dstruct = env.SharedLibrary('dstruct', objects)
+Return("dstruct")
+

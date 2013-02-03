@@ -1,0 +1,12 @@
+import os
+
+Import('env_tests')
+
+objects = [env_tests.Object(f) for f in Glob("*cpp")]
+input_files = Glob(os.path.join(".", "input", "*"))
+
+tests_exec = env_tests.Program('tests_exec', objects, LIBS=["dstruct", "gtest"])
+Return("tests_exec", "input_files")
+
+
+
