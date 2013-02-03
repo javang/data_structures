@@ -3,6 +3,7 @@
 
 #include "base_types.h"
 #include "list.h"
+#include "stack.h"
 
 struct datum {
     String name;
@@ -52,5 +53,18 @@ TEST(TestList, Test1) {
     l.remove(3);
     l.remove(5);
     EXPECT_EQ(l.size(), 6);
+
+}
+
+TEST(TestStack, Test1) {
+    dst::Stack<int> stack;
+    Ints ages = {1,2,3,4};
+    for(auto i : ages) stack.push(i);
+
+    EXPECT_EQ(stack.pop(), 4);
+    EXPECT_EQ(stack.pop(), 3);
+    EXPECT_EQ(stack.pop(), 2);
+    EXPECT_EQ(stack.pop(), 1);
+    EXPECT_EQ(stack.size(), 0);
 
 }
