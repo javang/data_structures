@@ -15,7 +15,6 @@ def check_headers(conf, files):
 # Options file
 #################################
 
-# directories in the project
 fn_config = 'scons_config.py'
 
 #################################

@@ -32,13 +32,13 @@ public:
          value_(value), right_(right), left_(left), parent_(nullptr) {}
 
     void delete_left() {
-        delete right_;    
-        right_ = nullptr;
+        delete left_;    
+        left_ = nullptr;
     }
        
     void delete_right() {
-        delete left_;
-        left_ = nullptr;
+        delete right_;
+        right_ = nullptr;
     }
 
     void set_right(const T &value) {
@@ -112,11 +112,11 @@ public:
     void clear() {
         if(left_ != nullptr) {
             left_->clear(); 
-            left_ = nullptr;
+            delete_left();
         }
         if(right_ != nullptr) {
             right_->clear(); 
-            right_ = nullptr;
+            delete_right();
         }
     }
 };
