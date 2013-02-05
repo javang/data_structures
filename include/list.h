@@ -1,8 +1,13 @@
-
-#include <iostream>
+#include "base_types.h"
+#include "string_func.h"
 #include <stdexcept>
-#include <vector>
+#include <functional>
+#include <fstream>
+#include <iostream>
 
+
+#ifndef LIST_H
+#define LIST_H
 
 
 namespace dst {
@@ -152,7 +157,6 @@ public:
 
      ~List() {
         while( !empty()) {
-            std::cout << "deleting " << std::endl;
             remove(0);
         }
      }
@@ -269,3 +273,5 @@ public:
 };
 
 }
+
+#endif

@@ -2,6 +2,9 @@
 #include <iostream>
 #include <stdexcept>
 
+#ifndef STACK_H
+#define STACK_H
+
 namespace dst {
 
 template <typename T>
@@ -72,3 +75,5 @@ public:
 };
 
 }
+
+#endif
